@@ -16,6 +16,8 @@
   "ports": {
     "8212/tcp": 8212
   },
+  "hassio_role": "homeassistant",
+  "homeassistant_api": true,
   "options": {
     "token": "",
     "prefix": "+"
