@@ -31,7 +31,7 @@ COPY rootfs .
 EXPOSE 8212
 
 # And finally start it
-CMD [ "npm", "start" ]
+CMD [ "node", "bot.js" ]
 
 # Build arugments
 ARG BUILD_ARCH
