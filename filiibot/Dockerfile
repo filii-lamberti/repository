@@ -14,8 +14,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Install requirements for add-on and app dependencies
 RUN \
     apk add --no-cache \
-        nodejs=8.11.4-r0 \
-        npm=8.11.4-r0 \
+        nodejs=8.14.0-r0 \
+        npm=8.14.0-r0 \
     \
     && npm install \
         --no-optional \
