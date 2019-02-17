@@ -2,11 +2,9 @@ ARG BUILD_FROM=hassioaddons/base:2.3.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-# Copy both package.json AND package-lock.json
-COPY package*.json /opt/
-
-# Set the current working dir to /opt
-WORKDIR /opt
+# Add env
+ENV ACCESS_TOKEN="***REMOVED***" \
+    COMMIT_SHA="v2.1.2"
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -17,15 +15,35 @@ RUN \
         nodejs=8.14.0-r0 \
         npm=8.14.0-r0 \
     \
+    && curl -H "PRIVATE-TOKEN: ${ACCESS_TOKEN}" -J -L -o /tmp/archive.zip \
+        "https://gitlab.com/api/v4/projects/7715575/repository/archive.zip?sha=${COMMIT_SHA}" \
+    \
+    && unzip /tmp/archive.zip \
+        "*/bot.js" \
+        "*/package-lock.json" \
+        "*/package.json" \
+        "*/welcomeDm.txt" \
+        -d /tmp/filiibot \
+    \
+    && mkdir -p /opt/filiibot \
+    \
+    && mv /tmp/filiibot/bot.js /opt/filiibot/ \
+    && mv /tmp/filiibot/package-lock.json /opt/filiibot/ \
+    && mv /tmp/filiibot/package.json /opt/filiibot/ \
+    && mv /tmp/filiibot/welcomeDm.txt /opt/filiibot/ \
+    \
+    && rm -fr /tmp/*
+    \
+    && cd /opt/filiibot \
+    \
     && npm install \
         --no-optional \
         --only=production \
     \
     && npm cache clear --force
 
-# Copy app source from rootfs
-# app.js, welcomeDm.txt
-COPY rootfs .
+# Copy root filesystem
+COPY rootfs /
 
 # Exposing the application's port
 EXPOSE 8212
