@@ -12,8 +12,11 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Install requirements for add-on and app dependencies
 RUN \
     apk add --no-cache \
+        g++=6.4.0-r9 \
+        make=4.2.1-r2 \
         nodejs=8.14.0-r0 \
         npm=8.14.0-r0 \
+        python2=2.7.15-r1 \
     \
     && curl -H "PRIVATE-TOKEN: ${ACCESS_TOKEN}" -J -L -o /tmp/archive.zip \
         "https://gitlab.com/api/v4/projects/7715575/repository/archive.zip?sha=${COMMIT_SHA}" \
