@@ -22,7 +22,7 @@ RUN \
     && curl -H "PRIVATE-TOKEN: ${ACCESS_TOKEN}" -J -L -o /tmp/archive.zip \
         "https://gitlab.com/api/v4/projects/7715575/repository/archive.zip?sha=${VERSION_TAG}" \
     \
-    && unzip /tmp/archive.zip \
+    && mkdir -p /tmp/filiibot \
     \
     && unzip -d /tmp/filiibot /tmp/archive.zip \
     \
