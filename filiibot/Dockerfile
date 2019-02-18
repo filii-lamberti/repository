@@ -33,7 +33,7 @@ RUN \
     && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}-${COMMIT_SHA}/package.json /opt/filiibot/ \
     && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}-${COMMIT_SHA}/welcomeDm.txt /opt/filiibot/ \
     \
-    && rm -fr /tmp/*
+    && rm -fr /tmp/* \
     \
     && cd /opt/filiibot \
     \
