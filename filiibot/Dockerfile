@@ -43,6 +43,9 @@ RUN \
     \
     && npm cache clear --force
 
+# Set the current working dir to /opt
+WORKDIR /opt/filiibot
+
 # Copy root filesystem
 COPY rootfs /
 
