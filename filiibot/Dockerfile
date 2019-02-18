@@ -4,7 +4,8 @@ FROM ${BUILD_FROM}
 
 # Add env
 ENV ACCESS_TOKEN="***REMOVED***" \
-    COMMIT_SHA="v2.1.2"
+    VERSION_TAG="v2.1.2" \
+    COMMIT_SHA="160b414fd609d7cc52583c23121225602485dcf6"
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -19,21 +20,18 @@ RUN \
         python2=2.7.15-r1 \
     \
     && curl -H "PRIVATE-TOKEN: ${ACCESS_TOKEN}" -J -L -o /tmp/archive.zip \
-        "https://gitlab.com/api/v4/projects/7715575/repository/archive.zip?sha=${COMMIT_SHA}" \
+        "https://gitlab.com/api/v4/projects/7715575/repository/archive.zip?sha=${VERSION_TAG}" \
     \
     && unzip /tmp/archive.zip \
-        "*/bot.js" \
-        "*/package-lock.json" \
-        "*/package.json" \
-        "*/welcomeDm.txt" \
-        -d /tmp/filiibot \
+    \
+    && unzip -d /tmp/filiibot /tmp/archive.zip \
     \
     && mkdir -p /opt/filiibot \
     \
-    && mv /tmp/filiibot/bot.js /opt/filiibot/ \
-    && mv /tmp/filiibot/package-lock.json /opt/filiibot/ \
-    && mv /tmp/filiibot/package.json /opt/filiibot/ \
-    && mv /tmp/filiibot/welcomeDm.txt /opt/filiibot/ \
+    && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}-${COMMIT_SHA}/bot.js /opt/filiibot/ \
+    && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}-${COMMIT_SHA}/package-lock.json /opt/filiibot/ \
+    && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}-${COMMIT_SHA}/package.json /opt/filiibot/ \
+    && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}-${COMMIT_SHA}/welcomeDm.txt /opt/filiibot/ \
     \
     && rm -fr /tmp/*
     \
