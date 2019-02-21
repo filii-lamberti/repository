@@ -1,6 +1,6 @@
 {
   "name": "FiliiBot",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "slug": "filiibot",
   "description": "A FiliiBot add-on for Hass.io!",
   "arch": [
@@ -20,10 +20,10 @@
   "homeassistant_api": true,
   "options": {
     "token": "",
-    "prefix": "+"
+    "prefix": ""
   },
   "schema": {
-    "token": "match(^[A-Za-z0-9\\.]+$)",
-    "prefix": "match(^.$)"
+    "token": "str",
+    "prefix": "str"
   }
 }
