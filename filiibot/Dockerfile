@@ -45,10 +45,10 @@ RUN \
 WORKDIR /opt/filiibot
 
 # Copy root filesystem
-COPY rootfs /
+#COPY rootfs /
 
 # Exposing the application's port
-EXPOSE 8212
+#EXPOSE 8212
 
 # And finally start it
 CMD [ "node", "bot.js" ]
