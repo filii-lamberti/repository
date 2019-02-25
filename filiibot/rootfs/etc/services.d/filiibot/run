@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+# ==============================================================================
+# Community Hass.io Add-ons: FiliiBot
+# Starts the FiliiBot
+# ==============================================================================
+# shellcheck disable=SC1091
+source /usr/lib/hassio-addons/base.sh
+
+cd /opt/filiibot || hass.die "Could not change directory to FiliiBot"
+
+# Starts the FiliiBot
+exec node bot.js

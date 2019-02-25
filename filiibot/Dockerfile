@@ -43,17 +43,16 @@ RUN \
     \
     && apk del --purge .build-dependencies
 
-# Set the current working dir to /opt
-WORKDIR /opt/filiibot
-
 # Copy root filesystem
-#COPY rootfs /
+COPY rootfs /
 
 # Exposing the application's port
 #EXPOSE 8212
 
+# Set the current working dir to /opt
+#WORKDIR /opt/filiibot
 # And finally start it
-CMD [ "node", "bot.js" ]
+#CMD [ "node", "bot.js" ]
 
 # Build arugments
 ARG BUILD_ARCH
