@@ -10,20 +10,20 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install requirements for add-on and app dependencies
 RUN \
-    apk add --no-cache \
+    apk add --no-cache --virtual .build-dependencies \
         g++=6.4.0-r9 \
         make=4.2.1-r2 \
+        python2=2.7.15-r1 \
+    \
+    && apk add --no-cache \
         nodejs=8.14.0-r0 \
         npm=8.14.0-r0 \
-        python2=2.7.15-r1 \
     \
     && curl -J -L -o /tmp/archive.zip \
         "https://gitlab.com/filii-lamberti/filiibot_nodejs/-/archive/${VERSION_TAG}/filiibot_nodejs-${VERSION_TAG}.zip" \
     \
     && mkdir -p /tmp/filiibot \
-    \
     && unzip -d /tmp/filiibot /tmp/archive.zip \
-    \
     && mkdir -p /opt/filiibot \
     \
     && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}/bot.js /opt/filiibot/ \
@@ -39,7 +39,9 @@ RUN \
         --no-optional \
         --only=production \
     \
-    && npm cache clear --force
+    && npm cache clear --force \
+    \
+    && apk del --purge .build-dependencies
 
 # Set the current working dir to /opt
 WORKDIR /opt/filiibot
