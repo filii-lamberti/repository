@@ -1,6 +1,6 @@
 {
   "name": "FiliiBot",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "slug": "filiibot",
   "description": "A FiliiBot add-on for Hass.io!",
   "arch": [
