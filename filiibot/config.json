@@ -1,12 +1,13 @@
 {
   "name": "FiliiBot",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "slug": "filiibot",
   "description": "A FiliiBot add-on for Hass.io!",
   "arch": [
     "aarch64",
     "amd64",
     "armhf",
+    "armv7",
     "i386"
   ],
   "url": "https://gitlab.com/tjorim/hassio-addons/tree/master/filiibot",
@@ -16,7 +17,6 @@
   "ports": {
     "8212/tcp": 8212
   },
-  "hassio_role": "manager",
   "homeassistant_api": true,
   "options": {
     "token": "",
