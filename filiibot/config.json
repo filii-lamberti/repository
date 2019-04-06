@@ -1,6 +1,6 @@
 {
   "name": "FiliiBot",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "slug": "filiibot",
   "description": "A FiliiBot add-on for Hass.io!",
   "arch": [
@@ -23,6 +23,8 @@
     "prefix": ""
   },
   "schema": {
+    "logging": "bool?",
+    "debugging": "bool?",
     "token": "str",
     "prefix": "str"
   }
