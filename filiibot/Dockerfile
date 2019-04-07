@@ -11,7 +11,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Install requirements for add-on and app dependencies
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        g++=6.4.0-r9 \
+        g++=8.2.0-r2 \
         make=4.2.1-r2 \
         python2=2.7.15-r1 \
     \
