@@ -13,7 +13,7 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         g++=8.2.0-r2 \
         make=4.2.1-r2 \
-        python2=2.7.15-r1 \
+        python2=2.7.15-r3 \
     \
     && apk add --no-cache \
         nodejs=10.14.2-r0 \
