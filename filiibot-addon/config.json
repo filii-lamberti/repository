@@ -10,13 +10,14 @@
     "armv7",
     "i386"
   ],
-  "url": "https://gitlab.com/tjorim/hassio-addons/tree/master/filiibot",
+  "url": "https://gitlab.com/filii-lamberti/filii-addons/tree/master/filiibot-addon",
   "startup": "application",
   "webui": "http://[HOST]:[PORT:8212]",
   "boot": "auto",
   "ports": {
     "8212/tcp": 8212
   },
+  "hassio_api": true,
   "homeassistant_api": true,
   "options": {
     "token": "",
