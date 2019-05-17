@@ -22,7 +22,7 @@ RUN \
         nodejs=10.14.2-r0 \
         npm=10.14.2-r0 \
     \
-    && cd /opt/filiibot \
+    && cd /opt/filiikot \
     \
     && npm install \
         --no-optional \
