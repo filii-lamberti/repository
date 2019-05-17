@@ -1,6 +1,6 @@
 {
   "name": "FiliiKot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "slug": "filiikot",
   "description": "A FiliiKot add-on for Hass.io!",
   "arch": [

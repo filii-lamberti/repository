@@ -4,7 +4,7 @@ const fs = require('fs');
 // Here we import the options.json file
 // from the add-on persistent data directory
 // that contains our configuration
-const options = JSON.parse(fs.readFileSync('options.json', 'utf8'));
+const options = JSON.parse(fs.readFileSync('/data/options.json', 'utf8'));
 
 // status of logging
 const { logging } = options;
@@ -71,7 +71,7 @@ const filiikot = {
 // MQTT
 const MQTT = require('mqtt');
 // Connect to the local MQTT broker
-const mqttClient = MQTT.connect('mqtt://localhost', mqttOptions);
+const mqttClient = MQTT.connect('mqtt://core-mosquitto', mqttOptions);
 
 mqttClient.on('connect', () => { // When connected
   log('MQTT connected');
