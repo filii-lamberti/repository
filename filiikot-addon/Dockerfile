@@ -3,10 +3,13 @@ ARG BUILD_FROM=hassioaddons/base:3.1.0
 FROM ${BUILD_FROM}
 
 # Add env
-ENV VERSION_TAG="v2.6.9"
+ENV VERSION_TAG="v2.0.0"
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+# Copy root filesystem
+COPY rootfs /
 
 # Install requirements for add-on and app dependencies
 RUN \
@@ -19,20 +22,6 @@ RUN \
         nodejs=10.14.2-r0 \
         npm=10.14.2-r0 \
     \
-    && curl -J -L -o /tmp/archive.zip \
-        "https://gitlab.com/filii-lamberti/filiibot_nodejs/-/archive/${VERSION_TAG}/filiibot_nodejs-${VERSION_TAG}.zip" \
-    \
-    && mkdir -p /tmp/filiibot \
-    && unzip -d /tmp/filiibot /tmp/archive.zip \
-    && mkdir -p /opt/filiibot \
-    \
-    && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}/bot.js /opt/filiibot/ \
-    && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}/package.json /opt/filiibot/ \
-    && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}/package-lock.json /opt/filiibot/ \
-    && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}/welcomeDm.txt /opt/filiibot/ \
-    \
-    && rm -fr /tmp/* \
-    \
     && cd /opt/filiibot \
     \
     && npm install \
@@ -43,8 +32,8 @@ RUN \
     \
     && apk del --purge .build-dependencies
 
-# Copy root filesystem
-COPY rootfs /
+# Exposing the application's port
+EXPOSE 8212
 
 # Build arugments
 ARG BUILD_ARCH

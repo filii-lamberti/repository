@@ -1,13 +1,13 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: FiliiBot
-# Starts the FiliiBot
+# Community Hass.io Add-ons: FiliiKot
+# Starts the FiliiKot status page
 # ==============================================================================
 
 # Set the current working dir to /opt
-cd /opt/filiibot || bashio::exit.nok "Could not change directory to FiliiBot"
+cd /opt/filiikot || bashio::exit.nok "Could not change directory to FiliiKot"
 
-bashio::log.info "Starting FiliiBot..."
+bashio::log.info "Starting FiliiKot..."
 
 # And finally start the FiliiBot
-exec node bot.js
+exec node app.js
