@@ -15,7 +15,7 @@
   "webui": "http://[HOST]:[PORT:8212]",
   "boot": "auto",
   "ports": {
-    "8212/tcp": 8212
+    "3000/tcp": 8212
   },
   "hassio_api": true,
   "homeassistant_api": true,
