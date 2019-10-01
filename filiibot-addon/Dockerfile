@@ -27,8 +27,8 @@ RUN \
     && mkdir -p /opt/filiibot \
     \
     && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}/bot.js /opt/filiibot/ \
-    && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}/package.json /opt/filiibot/ \
     && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}/package-lock.json /opt/filiibot/ \
+    && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}/package.json /opt/filiibot/ \
     && mv /tmp/filiibot/filiibot_nodejs-${VERSION_TAG}/welcomeDm.txt /opt/filiibot/ \
     \
     && rm -fr /tmp/* \

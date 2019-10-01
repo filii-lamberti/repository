@@ -3,13 +3,10 @@ ARG BUILD_FROM=hassioaddons/base:5.0.1
 FROM ${BUILD_FROM}
 
 # Add env
-ENV VERSION_TAG="v2.0.0"
+ENV VERSION_TAG="v2.0.3"
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-
-# Copy root filesystem
-COPY rootfs /
 
 # Install requirements for add-on and app dependencies
 RUN \
@@ -22,6 +19,20 @@ RUN \
         nodejs=10.16.3-r0 \
         npm=10.16.3-r0 \
     \
+    && curl -J -L -o /tmp/archive.zip \
+        "https://gitlab.com/filii-lamberti/filiikot_nodejs/-/archive/${VERSION_TAG}/filiikot_nodejs-${VERSION_TAG}.zip" \
+    \
+    && mkdir -p /tmp/filiikot \
+    && unzip -d /tmp/filiikot /tmp/archive.zip \
+    && mkdir -p /opt/filiikot \
+    \
+    && mv /tmp/filiikot/filiikot_nodejs-${VERSION_TAG}/public /opt/filiikot/ \
+    && mv /tmp/filiikot/filiikot_nodejs-${VERSION_TAG}/app.js /opt/filiikot/ \
+    && mv /tmp/filiikot/filiikot_nodejs-${VERSION_TAG}/package-lock.json /opt/filiikot/ \
+    && mv /tmp/filiikot/filiikot_nodejs-${VERSION_TAG}/package.json /opt/filiikot/ \
+    \
+    && rm -fr /tmp/* \
+    \
     && cd /opt/filiikot \
     \
     && npm install \
@@ -31,6 +42,9 @@ RUN \
     && npm cache clear --force \
     \
     && apk del --purge .build-dependencies
+
+# Copy root filesystem
+COPY rootfs /
 
 # Exposing the application's port
 EXPOSE 8212
