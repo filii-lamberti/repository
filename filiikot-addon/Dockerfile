@@ -19,8 +19,8 @@ RUN \
         python2=2.7.16-r1 \
     \
     && apk add --no-cache \
-        nodejs=10.14.2-r0 \
-        npm=10.14.2-r0 \
+        nodejs=10.16.3-r0 \
+        npm=10.16.3-r0 \
     \
     && cd /opt/filiikot \
     \
