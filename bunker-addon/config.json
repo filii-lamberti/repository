@@ -1,6 +1,6 @@
 {
   "name": "Bunker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "slug": "bunker",
   "description": "A bunker add-on for Hass.io!",
   "arch": [
