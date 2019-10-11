@@ -62,8 +62,11 @@ function getData() {
   .then(response => {
     const html = response.data;
     const $ = cheerio.load(html)
-    bunker.state = $('#accordion > h1').text().trim();
-    bunker.since = moment();
+    let newState = $('#accordion > h1').text().trim();
+    if (newState !== bunker.state) {
+      bunker.since = moment();
+      bunker.state = newState;
+    }
 
     // after scrape
     io.emit('update', bunker);
