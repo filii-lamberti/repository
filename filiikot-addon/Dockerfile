@@ -3,7 +3,7 @@ ARG BUILD_FROM=hassioaddons/base:5.0.1
 FROM ${BUILD_FROM}
 
 # Add env
-ENV VERSION_TAG="v2.2.5"
+ENV VERSION_TAG="v2.3.0"
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -57,18 +57,18 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="FiliiBot" \
-    io.hass.description="A FiliiBot add-on for Hass.io!" \
+    io.hass.name="FiliiKot" \
+    io.hass.description="A FiliiKot add-on for Hass.io!" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Jorim Tielemans <tielemans.jorim@gmail.com>" \
-    org.label-schema.description="A FiliiBot add-on for Hass.io!" \
+    org.label-schema.description="A FiliiKot add-on for Hass.io!" \
     org.label-schema.build-date=${BUILD_DATE} \
-    org.label-schema.name="FiliiBot" \
+    org.label-schema.name="FiliiKot" \
     org.label-schema.schema-version="1.0" \
     org.label-schema.url="https://addons.community" \
-    org.label-schema.usage="https://gitlab.com/tjorim/hassio-addons/blob/master/filiibot/README.md" \
+    org.label-schema.usage="https://gitlab.com/tjorim/hassio-addons/blob/master/filiikot/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
     org.label-schema.vcs-url="https://gitlab.com/tjorim/hassio-addons" \
     org.label-schema.vendor="Filii Lamberti"

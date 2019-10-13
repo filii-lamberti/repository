@@ -9,5 +9,5 @@ cd /opt/filiikot || bashio::exit.nok "Could not change directory to FiliiKot"
 
 bashio::log.info "Starting FiliiKot..."
 
-# And finally start the FiliiBot
+# And finally start the FiliiKot
 exec node app.js
