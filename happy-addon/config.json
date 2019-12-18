@@ -1,6 +1,6 @@
 {
   "name": "Happy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "slug": "happy",
   "description": "A happy add-on for Hass.io!",
   "arch": [
