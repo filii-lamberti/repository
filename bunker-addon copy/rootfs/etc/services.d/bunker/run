@@ -1,0 +1,13 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Community Hass.io Add-ons: Happy
+# Starts the Happy status page
+# ==============================================================================
+
+# Set the current working dir to /opt
+cd /opt/happy || bashio::exit.nok "Could not change directory to Happy"
+
+bashio::log.info "Starting Happy..."
+
+# And finally start the Happy
+exec node app.js
