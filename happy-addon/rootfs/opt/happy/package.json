@@ -1,7 +1,7 @@
 {
-	"name": "isdehappyopen",
+	"name": "ishethappyhour",
 	"version": "2.0.0",
-	"description": "Node.js app voor isdehappyopen.be",
+	"description": "Node.js app voor ishethappyhour.be",
 	"author": "Filii Lamberti",
 	"main": "app.js",
 	"scripts": {
