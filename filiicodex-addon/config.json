@@ -15,7 +15,6 @@
   "boot": "auto",
   "hassio_api": true,
   "homeassistant_api": true,
-  "webui": "https://codex.filii.be/",
   "ports": {
     "3000/tcp": 8215
   },
