@@ -19,13 +19,9 @@
     "3000/tcp": 8215
   },
   "options": {
-    "token": "",
-    "prefix": ""
   },
   "schema": {
     "logging": "bool?",
-    "debugging": "bool?",
-    "token": "str",
-    "prefix": "str"
+    "debugging": "bool?"
   }
 }
