@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:5.0.1
+ARG BUILD_FROM=hassioaddons/base:6.0.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -65,7 +65,7 @@ LABEL \
     org.label-schema.name="FiliiBot" \
     org.label-schema.schema-version="1.0" \
     org.label-schema.url="https://addons.community" \
-    org.label-schema.usage="https://gitlab.com/tjorim/hassio-addons/blob/master/filiibot/README.md" \
+    org.label-schema.usage="https://gitlab.com/filii-lamberti/filii-addons/blob/master/filiibot-addon/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://gitlab.com/tjorim/hassio-addons" \
+    org.label-schema.vcs-url="https://gitlab.com/filii-lamberti/filii-addons" \
     org.label-schema.vendor="Filii Lamberti"
