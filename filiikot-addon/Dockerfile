@@ -16,8 +16,8 @@ RUN \
         python2=2.7.16-r3 \
     \
     && apk add --no-cache \
-        nodejs=10.16.3-r0 \
-        npm=10.16.3-r0 \
+        nodejs=12.14.0-r0 \
+        npm=12.14.0-r0 \
     \
     && curl -J -L -o /tmp/archive.zip \
         "https://gitlab.com/filii-lamberti/filiikot_nodejs/-/archive/${VERSION_TAG}/filiikot_nodejs-${VERSION_TAG}.zip" \
