@@ -1,6 +1,6 @@
 {
   "name": "FiliiKot",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "slug": "filiikot",
   "description": "A FiliiKot add-on for Hass.io!",
   "url": "https://gitlab.com/filii-lamberti/filii-addons/tree/master/filiikot-addon",
@@ -15,7 +15,7 @@
   "boot": "auto",
   "hassio_api": true,
   "homeassistant_api": true,
-  "webui": "https://ishetfiliikotopen.be/"
+  "webui": "https://ishetfiliikotopen.be/",
   "ports": {
     "3000/tcp": 8212
   },

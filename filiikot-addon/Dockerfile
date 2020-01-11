@@ -3,7 +3,7 @@ ARG BUILD_FROM=hassioaddons/base:6.0.1
 FROM ${BUILD_FROM}
 
 # Add env
-ENV VERSION_TAG="v2.4.0"
+ENV VERSION_TAG="v2.4.1"
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -45,9 +45,6 @@ RUN \
 
 # Copy root filesystem
 COPY rootfs /
-
-# Exposing the application's port
-EXPOSE 8212
 
 # Build arugments
 ARG BUILD_ARCH
