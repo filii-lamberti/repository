@@ -1,6 +1,6 @@
 {
   "name": "FiliiCodex",
-  "version": "2.1.0",
+  "version": "2.3.0",
   "slug": "filiicodex",
   "description": "A FiliiCodex add-on for Hass.io!",
   "url": "https://gitlab.com/filii-lamberti/filii-addons/tree/master/filiicodex-addon",
@@ -21,6 +21,7 @@
   "options": {
   },
   "schema": {
+    "purge": "bool?",
     "logging": "bool?",
     "debugging": "bool?"
   }
