@@ -3,7 +3,7 @@ ARG BUILD_FROM=hassioaddons/base:6.0.1
 FROM ${BUILD_FROM}
 
 # Add env
-ENV VERSION_TAG="v2.8.1"
+ENV VERSION_TAG="v2.9.0"
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
