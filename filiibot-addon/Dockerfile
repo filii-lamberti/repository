@@ -12,6 +12,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         g++=9.2.0-r3 \
+        git=2.24.1-r0 \
         make=4.2.1-r2 \
         python2=2.7.16-r3 \
     \
