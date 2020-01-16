@@ -16,6 +16,7 @@ RUN \
         python2=2.7.16-r3 \
     \
     && apk add --no-cache \
+        ffmpeg=4.2.1-r3 \
         nodejs=12.14.0-r0 \
         npm=12.14.0-r0 \
     \
