@@ -11,7 +11,7 @@ COPY rootfs /
 # Install requirements for add-on and app dependencies
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        g++=8.3.0-r0 \
+        g++=9.2.0-r3 \
         make=4.2.1-r2 \
         python2=2.7.16-r1 \
     \
