@@ -32,9 +32,6 @@ RUN \
 # Copy root filesystem
 COPY rootfs /
 
-# Exposing the application's port
-EXPOSE 3000
-
 # Build arugments
 ARG BUILD_ARCH
 ARG BUILD_DATE
