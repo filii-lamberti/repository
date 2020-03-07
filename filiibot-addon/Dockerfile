@@ -10,11 +10,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install requirements for add-on and app dependencies
 RUN \
-    apk add --no-cache \
-        musl-utils=1.1.24-r1 \
-        musl=1.1.24-r1 \
-    \
-    && apk add --no-cache --virtual .build-dependencies \
+    apk add --no-cache --virtual .build-dependencies \
         g++=9.2.0-r3 \
         make=4.2.1-r2 \
         python2=2.7.16-r3 \
