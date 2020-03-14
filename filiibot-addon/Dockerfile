@@ -2,9 +2,6 @@ ARG BUILD_FROM=filii/base-node:latest
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-# Add env
-ENV VERSION_TAG="v3.2.4"
-
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
