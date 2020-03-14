@@ -7,7 +7,5 @@
     "i386": "hassioaddons/base-i386:7.0.3"
   },
   "squash": false,
-  "args": {
-    "VERSION_TAG": "v3.2.4"
-  }
+  "args": {}
 }
