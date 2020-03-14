@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:7.0.3
+ARG BUILD_FROM=filii/base-node:latest
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -10,15 +10,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install requirements for add-on and app dependencies
 RUN \
-    apk add --no-cache --virtual .build-dependencies \
-        g++=9.2.0-r3 \
-        make=4.2.1-r2 \
-        python2=2.7.16-r3 \
-    \
-    && apk add --no-cache \
+    apk add --no-cache \
         ffmpeg=4.2.1-r3 \
-        nodejs=12.15.0-r1 \
-        npm=12.15.0-r1 \
     \
     && curl -J -L -o /tmp/archive.zip \
         "https://gitlab.com/filii-lamberti/filiibot_nodejs/-/archive/${VERSION_TAG}/filiibot_nodejs-${VERSION_TAG}.zip" \
