@@ -1,6 +1,6 @@
 {
   "name": "Filiikot",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "slug": "filiikot",
   "description": "A Filiikot add-on for Home Assistant!",
   "url": "https://gitlab.com/filii-lamberti/addon-filiikot",
@@ -17,5 +17,6 @@
   "schema": {
     "logging": "bool?",
     "debugging": "bool?"
-  }
+  },
+  "image": "filii/filiikot-{arch}"
 }
