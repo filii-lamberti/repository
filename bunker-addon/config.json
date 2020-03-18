@@ -2,7 +2,7 @@
   "name": "Bunker",
   "version": "2.0.0",
   "slug": "bunker",
-  "description": "A bunker add-on for Hass.io!",
+  "description": "A bunker add-on for Home Assistant!",
   "url": "https://gitlab.com/filii-lamberti/filii-addons/tree/master/bunker-addon",
   "startup": "application",
   "arch": [

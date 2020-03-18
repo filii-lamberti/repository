@@ -2,7 +2,7 @@
   "name": "FiliiCodex",
   "version": "3.0.0",
   "slug": "filiicodex",
-  "description": "A FiliiCodex add-on for Hass.io!",
+  "description": "A FiliiCodex add-on for Home Assistant!",
   "url": "https://gitlab.com/filii-lamberti/filii-addons/tree/master/filiicodex-addon",
   "startup": "application",
   "arch": [

@@ -2,7 +2,7 @@
   "name": "Happy",
   "version": "2.0.0",
   "slug": "happy",
-  "description": "A happy add-on for Hass.io!",
+  "description": "A happy add-on for Home Assistant!",
   "url": "https://gitlab.com/filii-lamberti/filii-addons/tree/master/happy-addon",
   "startup": "application",
   "arch": [

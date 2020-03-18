@@ -1,13 +1,11 @@
 {
-  "name": "FiliiKot",
+  "name": "Filiikot",
   "version": "3.0.1",
   "slug": "filiikot",
-  "description": "A FiliiKot add-on for Hass.io!",
-  "url": "https://gitlab.com/filii-lamberti/filii-addons/tree/master/filiikot-addon",
+  "description": "A Filiikot add-on for Home Assistant!",
+  "url": "https://gitlab.com/filii-lamberti/addon-filiikot",
   "startup": "application",
-  "arch": [
-    "amd64"
-  ],
+  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
   "boot": "auto",
   "hassio_api": true,
   "homeassistant_api": true,

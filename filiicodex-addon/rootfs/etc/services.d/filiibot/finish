@@ -1,6 +1,6 @@
 #!/usr/bin/execlineb -S0
 # ==============================================================================
-# Community Hass.io Add-ons: FiliiCodex
+# Community Home Assistant Add-ons: FiliiCodex
 # Take down the S6 supervision tree when FiliiCodex fails
 # ==============================================================================
 if -n { s6-test $# -ne 0 }
