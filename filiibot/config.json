@@ -1,6 +1,6 @@
 {
   "name": "Filiibot",
-  "version": "5.0.0",
+  "version": "master",
   "slug": "filiibot",
   "description": "A Filiibot add-on for Home Assistant",
   "url": "https://gitlab.com/filii-lamberti/addon-filiibot",
