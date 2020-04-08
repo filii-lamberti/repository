@@ -1,6 +1,6 @@
 {
   "name": "MkDocs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "slug": "mkdocs",
   "description": "A MkDocs documentation add-on for Home Assistant",
   "url": "https://gitlab.com/filii-lamberti/addon-mkdocs",
