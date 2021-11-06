@@ -2,6 +2,10 @@ name: Continuous deployment
 
 on:
   workflow_call:
+    inputs:
+      addon:
+        required: true
+        type: string
 
 jobs:
   build:
@@ -19,14 +23,14 @@ jobs:
       - name: Set add-on version
         run: |
           ADDON_VERSION=$( cut -c12- <<< ${{ github.ref }} )
-          sed -i "s/dev/$ADDON_VERSION/g" filiibot/config.json
+          sed -i "s/dev/$ADDON_VERSION/g" ${{ inputs.addon }}/config.json
       - name: Build and push tagged Docker image
         uses: home-assistant/builder@2021.09.0
         with:
           args: |
             --all \
-            --target filiibot \
-            --image "filiibot/{arch}" \
+            --target ${{ inputs.addon }} \
+            --image "${{ inputs.addon }}/{arch}" \
             --docker-hub "ghcr.io/filii-lamberti"
 
   publish:
@@ -50,9 +54,9 @@ jobs:
         run: |
           ADDON_NAME=$( cut -c22- <<< ${{ github.repository }} )
           ADDON_VERSION=$( cut -c12- <<< ${{ github.ref }} )
-          cp -v addon/README.md addon/filiibot/config.json repository/filiibot/
+          cp -v addon/README.md addon/${{ inputs.addon }}/config.json repository/${{ inputs.addon }}/
           cd repository
-          sed -i "s/dev/$ADDON_VERSION/g" filiibot/config.json
+          sed -i "s/dev/$ADDON_VERSION/g" ${{ inputs.addon }}/config.json
           git config --local user.email "filii.lamberti@gmail.com"
           git config --local user.name "Filii Lamberti"
           git add .
