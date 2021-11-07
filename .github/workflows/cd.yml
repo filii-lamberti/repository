@@ -11,6 +11,15 @@ jobs:
   build:
     name: Build image
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch:
+          - aarch64
+          - amd64
+          - armhf
+          - armv7
+          - i386
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.4.0
@@ -23,12 +32,12 @@ jobs:
       - name: Set add-on version
         run: |
           ADDON_VERSION=$( cut -c12- <<< ${{ github.ref }} )
-          sed -i "s/dev/$ADDON_VERSION/g" ${{ inputs.addon }}/config.json
+          sed -i "s/dev/$ADDON_VERSION/g" ${{ inputs.addon }}/config.yaml
       - name: Build and push tagged Docker image
         uses: home-assistant/builder@2021.09.0
         with:
           args: |
-            --all \
+            --${{ matrix.arch }} \
             --target ${{ inputs.addon }} \
             --image "${{ inputs.addon }}/{arch}" \
             --docker-hub "ghcr.io/filii-lamberti"
@@ -52,15 +61,14 @@ jobs:
       - name: Create local changes and commit files
         continue-on-error: true
         run: |
-          ADDON_NAME=$( cut -c22- <<< ${{ github.repository }} )
           ADDON_VERSION=$( cut -c12- <<< ${{ github.ref }} )
           cp -v addon/README.md addon/${{ inputs.addon }}/config.yaml repository/${{ inputs.addon }}/
           cd repository
-          sed -i "s/dev/$ADDON_VERSION/g" ${{ inputs.addon }}/config.json
+          sed -i "s/dev/$ADDON_VERSION/g" ${{ inputs.addon }}/config.yaml
           git config --local user.email "filii.lamberti@gmail.com"
           git config --local user.name "Filii Lamberti"
           git add .
-          git commit -m "Publish $ADDON_NAME version $ADDON_VERSION" -a
+          git commit -m "Publish ${{ inputs.addon }} version $ADDON_VERSION" -a
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
