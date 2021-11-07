@@ -1,6 +1,6 @@
 ---
 name: Filiicodex
-version: 6.0.2
+version: 6.0.3
 slug: filiicodex
 description: A Filiicodex add-on for Home Assistant
 url: https://github.com/filii-lamberti/addon-filiicodex
@@ -16,6 +16,7 @@ homeassistant_api: true
 ports:
   3000/tcp: 8051 # C+O+D+E+X
 options:
+  purge: false
 schema:
   purge: bool?
   logging: bool?
