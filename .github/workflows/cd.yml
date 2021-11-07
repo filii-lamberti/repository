@@ -6,6 +6,9 @@ on:
       addon:
         required: true
         type: string
+    secrets:
+      token:
+        required: true
 
 jobs:
   build:
@@ -69,9 +72,9 @@ jobs:
           git config --local user.name "Filii Lamberti"
           git add .
           git commit -m "Publish ${{ inputs.addon }} version $ADDON_VERSION" -a
-      - name: Push changes
+      - name: Push local changes to GitHub repository
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          github_token: ${{ secrets.token }}
           directory: repository
           repository: filii-lamberti/repository
