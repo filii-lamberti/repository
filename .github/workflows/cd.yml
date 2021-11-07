@@ -54,7 +54,7 @@ jobs:
         run: |
           ADDON_NAME=$( cut -c22- <<< ${{ github.repository }} )
           ADDON_VERSION=$( cut -c12- <<< ${{ github.ref }} )
-          cp -v addon/README.md addon/${{ inputs.addon }}/config.json repository/${{ inputs.addon }}/
+          cp -v addon/README.md addon/${{ inputs.addon }}/config.yaml repository/${{ inputs.addon }}/
           cd repository
           sed -i "s/dev/$ADDON_VERSION/g" ${{ inputs.addon }}/config.json
           git config --local user.email "filii.lamberti@gmail.com"
